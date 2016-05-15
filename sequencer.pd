@@ -1,5 +1,5 @@
 #N canvas 1432 343 1147 903 10;
-#X obj 624 584 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 624 584 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 583 626 0;
 #X obj 624 628 metro 400;
@@ -21,7 +21,7 @@
 #X obj 916 82 key;
 #X floatatom 916 105 5 0 0 0 - - -;
 #X obj 916 126 sel 32;
-#X obj 916 148 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 916 148 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #N canvas 786 312 1628 1229 sequencer 0;
 #X floatatom 128 420 5 0 0 0 - - -;
@@ -633,13 +633,13 @@
 #X obj 111 134 cnv 15 15 15 empty empty Master_Clock 0 0 0 12 -146617
 -66577 0;
 #X obj 180 146 tgl 15 0 startstop setstartstop Start/Stop: -68 7 0
-10 -262144 -1 -1 1 1;
+10 -262144 -1 -1 0 1;
 #X floatatom 295 146 5 1 1000 0 BPM: setbpm bpm;
 #X obj 111 176 cnv 15 15 15 empty empty Audio 0 0 0 12 -146617 -66577
 0;
 #X obj 198 189 hsl 128 15 0 1 0 0 outputgain setoutputgain Output_Gain:
 -85 8 0 10 -262144 -1 -1 8890 1;
-#X obj 300 360 cnv 15 24 21 empty cnvbeat empty 20 12 0 14 -4160 -66577
+#X obj 209 296 cnv 15 24 21 empty cnvbeat empty 20 12 0 14 -4160 -66577
 0;
 #X floatatom 236 378 3 1 16 0 Steps: setq q;
 #X floatatom 237 398 3 1 64 0 Divide: setclkdiv clkdiv;
