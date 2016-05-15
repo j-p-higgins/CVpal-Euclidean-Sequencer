@@ -1,4 +1,4 @@
-#N canvas 484 655 482 685 10;
+#N canvas 484 655 631 691 10;
 #N canvas 10 22 1373 1333 maths 0;
 #X floatatom 100 62 5 0 0 0 - - -;
 #X floatatom 143 62 5 0 0 0 - - -;
@@ -756,7 +756,7 @@
 #X connect 321 0 223 1;
 #X connect 322 0 239 1;
 #X restore 356 102 pd maths;
-#N canvas 783 83 1628 1229 sequencer 1;
+#N canvas 783 83 1628 1229 sequencer 0;
 #X obj 632 145 spigot;
 #X floatatom 665 124 5 0 0 0 - - -;
 #X obj 948 903 loadbang;
@@ -1325,6 +1325,12 @@
 #X obj 1185 820 sel 0;
 #X obj 1154 873 r \$1-sfloaded;
 #X obj 1182 849 symbol;
+#X obj 680 1156 s sendosc;
+#X msg 680 1128 send /1/\$1 1;
+#X obj 680 1079 spigot;
+#X obj 680 1104 \$1;
+#X floatatom 713 1057 5 0 0 0 - - -;
+#X obj 713 1034 r connectosc;
 #X connect 0 0 120 0;
 #X connect 1 0 0 1;
 #X connect 2 0 4 0;
@@ -1414,10 +1420,12 @@
 #X connect 84 0 109 0;
 #X connect 84 0 110 0;
 #X connect 84 0 268 0;
+#X connect 84 0 291 0;
 #X connect 85 0 105 0;
 #X connect 85 0 106 0;
 #X connect 85 0 107 0;
 #X connect 85 0 270 0;
+#X connect 85 0 291 0;
 #X connect 86 0 84 1;
 #X connect 87 0 85 1;
 #X connect 88 0 87 0;
@@ -1599,8 +1607,13 @@
 #X connect 286 0 288 0;
 #X connect 287 0 265 0;
 #X connect 288 0 252 1;
+#X connect 290 0 289 0;
+#X connect 291 0 292 0;
+#X connect 292 0 290 0;
+#X connect 293 0 291 1;
+#X connect 294 0 293 0;
 #X restore 357 130 pd sequencer;
-#N canvas 106 22 2106 1390 gui 0;
+#N canvas 816 106 2106 1390 gui 0;
 #X msg 25 133 18;
 #X msg 61 133 0;
 #X msg 192 256 18;
@@ -1800,7 +1813,7 @@
 #X obj 1404 140 s \$1-setonoffbeat;
 #X obj 39 781 r \$1-q;
 #X obj 480 781 r \$1-q;
-#X obj 1348 303 loadbang;
+#X obj 1565 306 loadbang;
 #X obj 1348 326 \$1;
 #X obj 1348 348 sel 36 38 40 46;
 #X msg 1348 371 \; 36-label label Out_1;
@@ -2129,6 +2142,12 @@
 #X obj 1923 148 s \$1-setonoffbeat-b4;
 #X obj 1923 174 s \$1-setclkdiv-b4;
 #X obj 1924 200 s \$1-setclkmult-b4;
+#X obj 1565 420 s \$1-label;
+#X obj 1565 332 \$1;
+#X msg 1565 398 label \$1;
+#X symbolatom 1565 378 10 0 0 0 - - -;
+#X msg 1565 353 set Circle-\$1;
+#X obj 1661 353 del 10;
 #X connect 0 0 56 1;
 #X connect 1 0 56 1;
 #X connect 2 0 75 1;
@@ -2441,7 +2460,8 @@
 #X connect 192 0 194 0;
 #X connect 197 0 32 0;
 #X connect 198 0 50 0;
-#X connect 199 0 200 0;
+#X connect 199 0 529 0;
+#X connect 199 0 533 0;
 #X connect 200 0 201 0;
 #X connect 201 0 202 0;
 #X connect 201 1 203 0;
@@ -2822,39 +2842,44 @@
 #X connect 511 0 525 0;
 #X connect 511 0 526 0;
 #X connect 511 0 527 0;
+#X connect 529 0 532 0;
+#X connect 530 0 528 0;
+#X connect 531 0 530 0;
+#X connect 532 0 531 0;
+#X connect 533 0 531 0;
 #X restore 355 161 pd gui;
-#X obj 101 101 cnv 15 240 428 empty \$1-label Out_1 5 10 0 14 -146617
+#X obj 101 101 cnv 15 240 428 empty \$1-label Circle-1 5 10 0 12 -146617
 -66577 0;
 #X floatatom 238 180 3 1 16 0 Steps: #1-setq #1-q;
 #X floatatom 238 199 3 0 16 0 Beats: #1-setp #1-p;
 #X obj 210 316 tgl 20 0 \$1-b8out \$1-b8 empty 17 7 0 10 -262144 -1
 -262144 0 1;
-#X obj 281 286 tgl 20 0 \$1-b6out \$1-b6 empty 17 7 0 10 -62784 -1
+#X obj 281 286 tgl 20 0 \$1-b6out \$1-b6 empty 17 7 0 10 -262144 -1
 -262144 0 1;
 #X obj 139 286 tgl 20 0 \$1-b10out \$1-b10 empty 17 7 0 10 -262144
 -1 -262144 0 1;
 #X obj 139 144 tgl 20 0 \$1-b14out \$1-b14 empty 17 7 0 10 -262144
--1 -262144 1 1;
+-1 -262144 0 1;
 #X obj 311 215 tgl 20 0 \$1-b4out \$1-b4 empty 17 7 0 10 -262144 -1
--262144 1 1;
+-262144 0 1;
 #X obj 210 114 tgl 20 0 \$1-b0out \$1-b0 empty 17 7 0 10 -262144 -1
--262144 1 1;
+-262144 0 1;
 #X obj 109 215 tgl 20 0 \$1-b12out \$1-b12 empty 17 7 0 10 -262144
--1 -262144 1 1;
+-1 -262144 0 1;
 #X obj 281 144 tgl 20 0 \$1-b2out \$1-b2 empty 17 7 0 10 -262144 -1
--262144 1 1;
+-262144 0 1;
 #X obj 246 124 tgl 20 0 \$1-b1out \$1-b1 empty 17 7 0 10 -262144 -1
 -262144 0 1;
 #X obj 301 179 tgl 20 0 \$1-b3out \$1-b3 empty 17 7 0 10 -262144 -1
 -262144 0 1;
 #X obj 301 251 tgl 20 0 \$1-b5out \$1-b5 empty 17 7 0 10 -262144 -1
--262144 1 1;
+-262144 0 1;
 #X obj 246 306 tgl 20 0 \$1-b7out \$1-b7 empty 17 7 0 10 -262144 -1
--262144 1 1;
+-262144 0 1;
 #X obj 174 306 tgl 20 0 \$1-b9out \$1-b9 empty 17 7 0 10 -262144 -1
--262144 1 1;
+-262144 0 1;
 #X obj 119 251 tgl 20 0 \$1-b11out \$1-b11 empty 17 7 0 10 -262144
--1 -262144 1 1;
+-1 -262144 0 1;
 #X obj 119 179 tgl 20 0 \$1-b13out \$1-b13 empty 17 7 0 10 -262144
 -1 -262144 0 1;
 #X obj 174 124 tgl 20 0 \$1-b15out \$1-b15 empty 17 7 0 10 -262144

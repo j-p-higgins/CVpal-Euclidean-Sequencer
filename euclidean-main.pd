@@ -1,9 +1,9 @@
-#N canvas 247 22 1021 903 10;
+#N canvas 625 192 1027 897 10;
 #X obj 14 13 sequencer;
-#X obj 263 13 circlegui 1;
-#X obj 513 13 circlegui 36;
-#X obj 762 13 circlegui 38;
-#X obj 513 451 circlegui 40;
-#X obj 762 451 circlegui 46;
-#X obj 13 451 circlegui 2;
-#X obj 263 451 circlegui 3;
+#X obj 266 13 circlegui 1;
+#X obj 14 453 circlegui 36;
+#X obj 266 453 circlegui 38;
+#X obj 518 453 circlegui 40;
+#X obj 769 453 circlegui 46;
+#X obj 518 13 circlegui 2;
+#X obj 769 13 circlegui 3;
