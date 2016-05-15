@@ -1,4 +1,4 @@
-#N canvas 484 655 631 691 10;
+#N canvas 38 624 631 691 10;
 #N canvas 10 22 1373 1333 maths 0;
 #X floatatom 100 62 5 0 0 0 - - -;
 #X floatatom 143 62 5 0 0 0 - - -;
@@ -1613,7 +1613,7 @@
 #X connect 293 0 291 1;
 #X connect 294 0 293 0;
 #X restore 357 130 pd sequencer;
-#N canvas 816 106 2106 1390 gui 0;
+#N canvas 591 70 2106 1390 gui 0;
 #X msg 25 133 18;
 #X msg 61 133 0;
 #X msg 192 256 18;
@@ -2148,6 +2148,28 @@
 #X symbolatom 1565 378 10 0 0 0 - - -;
 #X msg 1565 353 set Circle-\$1;
 #X obj 1661 353 del 10;
+#X obj 1082 1132 r \$1-open;
+#X obj 1082 1178 s \$1-setopen;
+#X msg 1082 1156 color 21 -1;
+#X obj 944 1031 loadbang;
+#X obj 944 1080 s \$1-setopen;
+#X obj 944 1102 s \$1-setopen-b1;
+#X obj 944 1125 s \$1-setopen-b2;
+#X obj 944 1148 s \$1-setopen-b3;
+#X obj 944 1170 s \$1-setopen-b4;
+#X msg 944 1055 color 0 -1;
+#X msg 1175 1155 color 21 -1;
+#X msg 1294 1154 color 21 -1;
+#X msg 1403 1153 color 21 -1;
+#X msg 1509 1150 color 21 -1;
+#X obj 1175 1177 s \$1-setopen-b1;
+#X obj 1294 1176 s \$1-setopen-b2;
+#X obj 1403 1175 s \$1-setopen-b3;
+#X obj 1509 1172 s \$1-setopen-b4;
+#X obj 1175 1131 r \$1-open-b1;
+#X obj 1294 1130 r \$1-open-b2;
+#X obj 1403 1129 r \$1-open-b3;
+#X obj 1509 1126 r \$1-open-b4;
 #X connect 0 0 56 1;
 #X connect 1 0 56 1;
 #X connect 2 0 75 1;
@@ -2847,6 +2869,22 @@
 #X connect 531 0 530 0;
 #X connect 532 0 531 0;
 #X connect 533 0 531 0;
+#X connect 534 0 536 0;
+#X connect 536 0 535 0;
+#X connect 537 0 543 0;
+#X connect 543 0 538 0;
+#X connect 543 0 539 0;
+#X connect 543 0 540 0;
+#X connect 543 0 541 0;
+#X connect 543 0 542 0;
+#X connect 544 0 548 0;
+#X connect 545 0 549 0;
+#X connect 546 0 550 0;
+#X connect 547 0 551 0;
+#X connect 552 0 544 0;
+#X connect 553 0 545 0;
+#X connect 554 0 546 0;
+#X connect 555 0 547 0;
 #X restore 355 161 pd gui;
 #X obj 101 101 cnv 15 240 428 empty \$1-label Circle-1 5 10 0 12 -146617
 -66577 0;
@@ -2894,7 +2932,7 @@
 #X obj 109 347 cnv 15 225 155 empty empty Banks 18 9 0 13 -233213 -66577
 0;
 #X obj 191 374 bng 12 250 50 0 \$1-open-b1 \$1-setopen-b1 Open_SF:
--75 7 0 10 -262144 -1 -1;
+-75 7 0 10 -99865 -1 -1;
 #X floatatom 191 390 3 1 16 0 Steps:______ #1-setq-b1 #1-q-b1;
 #X floatatom 191 409 3 0 16 0 Beats:______ #1-setp-b1 #1-p-b1;
 #X floatatom 191 428 3 0 0 0 Rotate:_____ #1-setstartpos-b1 #1-startpos-b1
@@ -2905,8 +2943,8 @@
 ;
 #X obj 191 486 tgl 12 0 \$1-onoffbeat-b1 \$1-setonoffbeat-b1 On/Off_Beat:
 -76 8 0 10 -262144 -1 -1 1 1;
-#X obj 230 374 bng 12 250 50 0 \$1-open-b2 \$1-setopen-b1 empty -50
-7 0 10 -262144 -1 -1;
+#X obj 230 374 bng 12 250 50 0 \$1-open-b2 \$1-setopen-b2 empty -50
+7 0 10 -99865 -1 -1;
 #X floatatom 230 390 3 1 16 0 - #1-setq-b2 #1-q-b2;
 #X floatatom 230 409 3 0 16 0 - #1-setp-b2 #1-p-b2;
 #X floatatom 230 428 3 0 0 0 - #1-setstartpos-b2 #1-startpos-b2;
@@ -2914,8 +2952,8 @@
 #X floatatom 230 466 3 1 8 0 - #1-setclkmult-b2 #1-clkmult-b2;
 #X obj 230 486 tgl 12 0 \$1-onoffbeat-b2 \$1-setonoffbeat-b2 empty
 -76 8 0 10 -262144 -1 -1 1 1;
-#X obj 268 374 bng 12 250 50 0 \$1-open-b3 \$1-setopen-b1 empty -50
-7 0 10 -262144 -1 -1;
+#X obj 268 374 bng 12 250 50 0 \$1-open-b3 \$1-setopen-b3 empty -50
+7 0 10 -99865 -1 -1;
 #X floatatom 268 390 3 1 16 0 - #1-setq-b3 #1-q-b3;
 #X floatatom 268 409 3 0 16 0 - #1-setp-b3 #1-p-b3;
 #X floatatom 268 428 3 0 0 0 - #1-setstartpos-b3 #1-startpos-b3;
@@ -2923,8 +2961,8 @@
 #X floatatom 268 466 3 1 8 0 - #1-setclkmult-b3 #1-clkmult-b3;
 #X obj 268 486 tgl 12 0 \$1-onoffbeat-b3 \$1-setonoffbeat-b3 empty
 -76 8 0 10 -262144 -1 -1 1 1;
-#X obj 308 374 bng 12 250 50 0 \$1-open-b4 \$1-setopen-b1 empty -50
-7 0 10 -262144 -1 -1;
+#X obj 308 374 bng 12 250 50 0 \$1-open-b4 \$1-setopen-b4 empty -50
+7 0 10 -99865 -1 -1;
 #X floatatom 308 390 3 1 16 0 - #1-setq-b4 #1-q-b4;
 #X floatatom 308 409 3 0 16 0 - #1-setp-b4 #1-p-b4;
 #X floatatom 308 428 3 0 0 0 - #1-setstartpos-b4 #1-startpos-b4;
